@@ -1,120 +1,111 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pratham Salvi | Robotics & AI Engineer</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Pratham Salvi - Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="is-preload">
+<body>
 
   <!-- Wrapper -->
   <div id="wrapper">
 
-    <!-- Intro Section -->
+    <!-- Intro -->
     <section id="intro">
-      <h1>Hi! I'm<br>Pratham Salvi</h1>
-      <p>Robotics and AI researcher specializing in legged robots and robotic manipulators. I focus on designing robust and adaptable robots through control theory, reinforcement learning, and real-world experimentation.</p>
+      <h1>Hi! I'm<br />Pratham Salvi</h1>
+      <p>A Robotics & AI Engineer specializing in legged robots, robotic manipulators, reinforcement learning, and control systems. I build robust, adaptable robots by blending control theory with real-world experimentation.</p>
       <ul class="actions">
-        <li><a href="#projects" class="button scrolly">See My Work</a></li>
-        <li><a href="assets/pdf/Pratham_CV.pdf" target="_blank" class="button alt">Download CV</a></li>
+        <li><a href="#projects" class="button">See My Work</a></li>
+        <li><a href="Pratham_CV.pdf" target="_blank" class="button alt">Download CV</a></li>
       </ul>
     </section>
-
-    <!-- Header -->
-    <header id="header">
-      <a href="#intro" class="logo">Pratham Salvi</a>
-    </header>
 
     <!-- Nav -->
     <nav id="nav">
       <ul class="links">
-        <li><a href="#intro">Home</a></li>
+        <li class="active"><a href="#intro">Home</a></li>
         <li><a href="#about">About Me</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#blogs">Blogs</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <ul class="icons">
-        <li><a href="https://github.com/prathamsalvi03" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-        <li><a href="https://www.linkedin.com/in/pratham-salvi-824100201/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+        <li><a href="https://github.com/prathamsalvi03" target="_blank">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/pratham-salvi-824100201/" target="_blank">LinkedIn</a></li>
+        <li><a href="mailto:prathamsalvi1221@gmail.com">Email</a></li>
       </ul>
     </nav>
 
     <!-- Main -->
     <div id="main">
 
-      <!-- About Me Section -->
+      <!-- About -->
       <section id="about">
         <header class="major">
           <h2>About Me</h2>
         </header>
-        <p>I am a robotics researcher passionate about intelligent robotic systems. I specialize in legged robots, robotic manipulators, and motion planning. My experience includes Python, C++, ROS 2, and reinforcement learning.</p>
+        <p>I am a Robotics Engineer with research experience in legged locomotion, robotic manipulation, reinforcement learning, and model predictive control. I previously worked as a Robotics Researcher at Tata Consultancy Services, focusing on locomotion with deep RL and imitation learning. My passion lies in designing intelligent robotic systems that can adapt and perform in real-world environments.</p>
       </section>
 
-      <!-- Projects Section -->
+      <!-- Projects -->
       <section id="projects">
         <header class="major">
           <h2>Projects</h2>
         </header>
-        <section class="posts">
-          <!-- Project 1 -->
+        <div class="posts">
+
           <article>
-            <header>
-              <span class="date">2023</span>
-              <h2><a href="#">TerraPredict</a></h2>
-            </header>
-            <a href="https://github.com/prathamsalvi03/TerraPredict" class="image fit">
-              <img src="assets/images/terrapredict.jpg" alt="TerraPredict" />
-            </a>
-            <p>ML-based land cover classification using satellite imagery.</p>
-            <ul class="actions special">
-              <li><a href="https://github.com/prathamsalvi03/TerraPredict" class="button">View Project</a></li>
+            <a href="https://github.com/prathamsalvi03/TerraPredict" target="_blank" class="image"><img src="images/project1.jpg" alt="TerraPredict" /></a>
+            <h3>TerraPredict</h3>
+            <p>ML-based land cover classification using satellite imagery. Built with CNNs for environmental monitoring.</p>
+            <ul class="actions">
+              <li><a href="https://github.com/prathamsalvi03/TerraPredict" target="_blank" class="button">View Code</a></li>
             </ul>
           </article>
 
-          <!-- Project 2 -->
           <article>
-            <header>
-              <span class="date">2023</span>
-              <h2><a href="#">Brain Cancer Detection</a></h2>
-            </header>
-            <a href="https://github.com/prathamsalvi03/ML-RL-DL/blob/main/Brain_cancer_detection%20.ipynb" class="image fit">
-              <img src="assets/images/brain.jpg" alt="Brain Cancer Detection" />
-            </a>
-            <p>PyTorch-based brain tumor detection using MRI scans with preprocessing and classification.</p>
-            <ul class="actions special">
-              <li><a href="https://github.com/prathamsalvi03/ML-RL-DL/blob/main/Brain_cancer_detection%20.ipynb" class="button">View Project</a></li>
+            <a href="https://github.com/prathamsalvi03/ML-RL-DL/blob/main/Brain_cancer_detection.ipynb" target="_blank" class="image"><img src="images/project2.jpg" alt="Brain Cancer Detection" /></a>
+            <h3>Brain Cancer Detection</h3>
+            <p>PyTorch-based brain tumor detection using MRI scans. Applied preprocessing and classification techniques.</p>
+            <ul class="actions">
+              <li><a href="https://github.com/prathamsalvi03/ML-RL-DL/blob/main/Brain_cancer_detection.ipynb" target="_blank" class="button">View Code</a></li>
             </ul>
           </article>
 
-          <!-- Project 3 -->
           <article>
-            <header>
-              <span class="date">2024</span>
-              <h2><a href="#">Panda Arm Motion Planning</a></h2>
-            </header>
-            <a href="https://github.com/prathamsalvi03/Motion-Planning/tree/main/Panda_arm_vision_based_motion_planning_with_Moveit/src" class="image fit">
-              <img src="assets/images/panda.jpg" alt="Panda Arm Motion Planning" />
-            </a>
-            <p>Vision-based motion planning for the Franka Emika Panda robot arm using MoveIt and ROS.</p>
-            <ul class="actions special">
-              <li><a href="https://github.com/prathamsalvi03/Motion-Planning/tree/main/Panda_arm_vision_based_motion_planning_with_Moveit/src" class="button">View Project</a></li>
+            <a href="https://github.com/prathamsalvi03/Motion-Planning" target="_blank" class="image"><img src="images/project3.jpg" alt="Panda Arm" /></a>
+            <h3>Panda Arm Motion Planning</h3>
+            <p>Vision-based motion planning using MoveIt and ROS for the Franka Emika Panda arm. Real-time visual servoing.</p>
+            <ul class="actions">
+              <li><a href="https://github.com/prathamsalvi03/Motion-Planning" target="_blank" class="button">View Code</a></li>
             </ul>
           </article>
 
-        </section>
+        </div>
       </section>
 
-      <!-- Contact Section -->
+      <!-- Blogs -->
+      <section id="blogs">
+        <header class="major">
+          <h2>Blogs</h2>
+        </header>
+        <article>
+          <h3>Wave Energy: A Renewable Future</h3>
+          <p>A deep dive into how wave energy can be harnessed as a sustainable alternative to fossil fuels.</p>
+          <a href="https://medium.com/@prathamsalvi1221/wave-energy-c365005d3a3c" target="_blank" class="button">Read Blog</a>
+        </article>
+      </section>
+
+      <!-- Contact -->
       <section id="contact">
         <header class="major">
-          <h2>Contact</h2>
+          <h2>Get in Touch</h2>
         </header>
-        <p>You can reach me via email or connect on LinkedIn and GitHub.</p>
-        <ul class="icons">
-          <li><a href="mailto:prathamsalvi1221@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-          <li><a href="https://github.com/prathamsalvi03" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-          <li><a href="https://www.linkedin.com/in/pratham-salvi-824100201/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+        <ul>
+          <li><strong>Email:</strong> <a href="mailto:prathamsalvi1221@gmail.com">prathamsalvi1221@gmail.com</a></li>
+          <li><strong>GitHub:</strong> <a href="https://github.com/prathamsalvi03">github.com/prathamsalvi03</a></li>
+          <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/pratham-salvi-824100201/" target="_blank">linkedin.com/in/pratham-salvi-824100201</a></li>
         </ul>
       </section>
 
@@ -122,19 +113,10 @@
 
     <!-- Footer -->
     <footer id="footer">
-      <ul>
-        <li>&copy; 2025 Pratham Salvi</li>
-        <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-      </ul>
+      <p>&copy; 2025 Pratham Salvi. Design inspired by <a href="https://html5up.net">HTML5 UP</a>.</p>
     </footer>
 
   </div>
-
-  <!-- Scripts -->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/jquery.scrollex.min.js"></script>
-  <script src="assets/js/jquery.scrolly.min.js"></script>
-  <script src="assets/js/main.js"></script>
 
 </body>
 </html>
