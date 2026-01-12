@@ -3,8 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Pratham Salvi</title>
+    <title>Pratham Salvi | Robotics & AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --primary: #6366f1; /* Modern Indigo */
+            --secondary: #a855f7;
+            --bg-dark: #0f172a; /* Deep Navy */
+            --bg-card: #1e293b;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -12,155 +23,162 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--text-main);
+            background-color: var(--bg-dark);
+            scroll-behavior: smooth;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 2rem;
         }
 
-        /* Navigation */
+        /* --- Navigation --- */
         nav {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            padding: 1.2rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         nav .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
         }
 
-        nav .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #667eea;
+        .logo {
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: -1px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         nav ul {
             display: flex;
             list-style: none;
             gap: 2rem;
-            flex-wrap: wrap;
+            align-items: center;
         }
 
         nav a {
             text-decoration: none;
-            color: #333;
+            color: var(--text-dim);
+            font-size: 0.9rem;
             font-weight: 500;
-            transition: color 0.3s;
+            transition: 0.3s;
         }
 
         nav a:hover {
-            color: #667eea;
+            color: var(--primary);
         }
 
+        /* --- Buttons --- */
         .btn-primary {
-            background: #667eea;
+            background: var(--primary);
             color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 25px;
+            padding: 0.6rem 1.4rem;
+            border-radius: 8px;
             text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.3s all ease;
+            border: none;
         }
 
         .btn-primary:hover {
-            background: #764ba2;
+            background: #4f46e5;
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
         }
 
-        /* Hero Section */
+        /* --- Hero Section --- */
         .hero {
-            background: white;
-            padding: 4rem 0;
+            padding: 8rem 0 6rem;
             text-align: center;
-        }
-
-        .hero-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2rem;
         }
 
         .profile-photo {
-            width: 200px;
-            height: 200px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid #667eea;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-            animation: fadeIn 1s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            color: #333;
-            margin-bottom: 0.5rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: #666;
+            border: 3px solid var(--primary);
+            padding: 5px;
             margin-bottom: 2rem;
         }
 
-        /* Projects Section */
-        .projects {
-            background: white;
-            padding: 4rem 0;
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
         }
 
+        .hero p {
+            font-family: 'Roboto Mono', monospace;
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        /* --- Project Cards --- */
         .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            color: #333;
+            font-size: 2rem;
             margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 4px;
+            background: var(--primary);
         }
 
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
         }
 
         .project-card {
-            background: #f8f9fa;
-            border-radius: 15px;
+            background: var(--bg-card);
+            border-radius: 16px;
             overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: 0.4s;
         }
 
         .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            transform: translateY(-8px);
+            border-color: var(--primary);
         }
 
         .project-media {
             width: 100%;
-            height: 250px;
+            height: 200px;
             object-fit: cover;
-            background: #e9ecef;
+            filter: grayscale(20%);
+            transition: 0.4s;
+        }
+
+        .project-card:hover .project-media {
+            filter: grayscale(0%);
         }
 
         .project-content {
@@ -168,280 +186,71 @@
         }
 
         .project-content h3 {
-            color: #667eea;
-            margin-bottom: 0.5rem;
-            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
         }
 
         .project-content p {
-            color: #666;
-            margin-bottom: 1rem;
-            line-height: 1.6;
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
         }
 
         .project-link {
-            color: #667eea;
+            color: var(--primary);
             text-decoration: none;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: gap 0.3s;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .project-link:hover {
-            gap: 1rem;
-        }
-
-        /* Education & Skills */
-        .education, .skills {
-            background: #f8f9fa;
-            padding: 4rem 0;
-        }
-
-        .education-item, .skills-container {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .education-item h3 {
-            color: #667eea;
-            margin-bottom: 0.5rem;
-        }
-
+        /* --- Skills (Tag Cloud Style) --- */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 12px;
         }
 
         .skill-category h3 {
-            color: #667eea;
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-family: 'Roboto Mono', monospace;
         }
 
         .skill-category p {
-            color: #666;
-            line-height: 1.8;
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            line-height: 2;
         }
 
-        /* Contact */
+        /* --- Contact --- */
         .contact {
-            background: white;
-            padding: 4rem 0;
+            padding: 6rem 0;
             text-align: center;
+            background: rgba(99, 102, 241, 0.05);
+            border-radius: 24px;
+            margin-bottom: 4rem;
         }
 
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        .contact-link {
-            color: #667eea;
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: color 0.3s;
-        }
-
-        .contact-link:hover {
-            color: #764ba2;
-        }
-
-        /* Footer */
         footer {
-            background: #333;
-            color: white;
+            padding: 3rem 0;
             text-align: center;
-            padding: 2rem 0;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .project-grid {
-                grid-template-columns: 1fr;
-            }
-
-            nav ul {
-                gap: 1rem;
-            }
+            .hero h1 { font-size: 2.5rem; }
+            nav ul { display: none; } /* Hide menu on mobile for simplicity */
         }
     </style>
 </head>
-<body>
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <div class="logo">Pratham Salvi</div>
-            <ul>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="Pratham_CV (4).pdf" class="btn-primary" download>Download Resume</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <img src="Profile_pic_work.jpeg" alt="Pratham Salvi" class="profile-photo">
-                <div>
-                    <h1>Hello, I'm Pratham Salvi</h1>
-                    <p>Robotics Engineer • AI/ML Researcher • Autonomous Systems Developer</p>
-                    <a href="#projects" class="btn-primary">View My Work</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <div class="project-grid">
-                <!-- Project 1 - Autonomous Vehicle -->
-                <div class="project-card">
-                    <video class="project-media" controls preload="metadata">
-                        <source src="Lidar+Cam.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="project-content">
-                        <h3>Autonomous Vehicle Control</h3>
-                        <p>Advanced autonomous driving system with LiDAR and camera fusion for real-time navigation and obstacle avoidance.</p>
-                        <a href="https://github.com/prathamsalvi03/Autonomous-Vehicle-Control" class="project-link">GitHub →</a>
-                    </div>
-                </div>
-
-                <!-- Project 2 - Controls -->
-                <div class="project-card">
-                    <img src="" alt="Control Systems" class="project-media">
-                    <div class="project-content">
-                        <h3>Advanced Control Systems</h3>
-                        <p>Comprehensive projects covering various control techniques from basics to advanced implementations in Python.</p>
-                        <a href="https://github.com/prathamsalvi03/Controls" class="project-link">GitHub →</a>
-                    </div>
-                </div>
-
-                <!-- Project 3 - UR5 Interceptor -->
-                <div class="project-card">
-                    <img src="brain_Mri.jpeg" alt="UR5 Interceptor" class="project-media">
-                    <div class="project-content">
-                        <h3>UR5 Interceptor – MPC + LQR</h3>
-                        <p>Real-time target interception with UR5 robotic arm using Model Predictive Control and Linear Quadratic Regulator for trajectory planning and control.</p>
-                        <a href="https://github.com/prathamsalvi03/UR5-Interceptor-Predictive-Robotics-with-MPC-LQR" class="project-link">GitHub →</a>
-                    </div>
-                </div>
-
-                <!-- Project 4 - Panda Arm -->
-                <div class="project-card">
-                    <video class="project-media" controls preload="metadata">
-                        <source src="PANDA_VISION_PROJECT_MOVEIT2.webm" type="video/webm">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="project-content">
-                        <h3>Panda Robot Vision-Based Control</h3>
-                        <p>Motion planning with MoveIt2 using computer vision for object detection and manipulation tasks.</p>
-                        <a href="https://github.com/prathamsalvi03/Panda-robot-vision-based-control-using-moveit2" class="project-link">GitHub →</a>
-                    </div>
-                </div>
-
-                <!-- Project 5 - ML/RL/DL Projects -->
-                <div class="project-card">
-                    <img src="brain_Mri.jpeg" alt="ML Projects" class="project-media">
-                    <div class="project-content">
-                        <h3>Machine Learning & Deep Learning Projects</h3>
-                        <p>Collection of ML, Reinforcement Learning, and Deep Learning projects showcasing various AI techniques and implementations.</p>
-                        <a href="https://github.com/prathamsalvi03/ML-RL-DL" class="project-link">GitHub →</a>
-                    </div>
-                </div>
-
-                <!-- Project 6 - TerraPredict -->
-                <div class="project-card">
-                    <video class="project-media" controls preload="metadata">
-                        <source src="Terrapredict.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="project-content">
-                        <h3>TerraPredict</h3>
-                        <p>Landslide prediction and analyzing system using machine learning techniques.</p>
-                        <a href="https://github.com/prathamsalvi03/TerraPredict" class="project-link">GitHub →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="education">
-        <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="education-item">
-                <h3>M.Eng in Robotics</h3>
-                <p>University of Maryland, College Park (2025–2027)</p>
-            </div>
-            <div class="education-item">
-                <h3>B.Tech in Mechanical Engineering</h3>
-                <p>VIT Vellore (2020–2024) | CGPA: 8.17/10</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-container">
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Robotics</h3>
-                        <p>Motion Planning, Control Systems, SLAM, Dynamics, State Estimation</p>
-                    </div>
-                    <div class="skill-category">
-                        <h3>AI/ML</h3>
-                        <p>Reinforcement Learning, Computer Vision, Deep Learning, Imitation Learning, Foundational Models</p>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Programming</h3>
-                        <p>Python, C++, MATLAB, PyTorch, TensorFlow, NumPy, OpenCV, JAX</p>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Tools</h3>
-                        <p>ROS1/ROS2, Isaac Gym/Sim, Gazebo, MuJoCo, PyBullet, SolidWorks, CARLA, Git</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <div class="contact-links">
-                <a href="mailto:prathamsalvi1221@gmail.com" class="contact-link">📧 prathamsalvi1221@gmail.com</a>
-                <a href="https://github.com/prathamsalvi03" class="contact-link">💻 @prathamsalvi03</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>© 2025 Pratham Salvi — All Rights Reserved</p>
-        </div>
-    </footer>
-</body>
-</html>
