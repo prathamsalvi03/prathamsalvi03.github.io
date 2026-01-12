@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pratham Salvi | Robotics & AI</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <title>Pratham Salvi | Robotics & AI Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary: #6366f1; /* Modern Indigo */
-            --secondary: #a855f7;
-            --bg-dark: #0f172a; /* Deep Navy */
-            --bg-card: #1e293b;
-            --text-main: #f8fafc;
-            --text-dim: #94a3b8;
+            --primary: #6366f1; /* Indigo */
+            --secondary: #a855f7; /* Purple */
+            --bg-dark: #0f172a; /* Midnight Navy */
+            --bg-card: #1e293b; /* Slate */
+            --text-main: #f8fafc; /* White-ish */
+            --text-dim: #94a3b8; /* Grey */
+            --accent-glow: rgba(99, 102, 241, 0.3);
         }
 
         * {
@@ -22,12 +24,16 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
             color: var(--text-main);
             background-color: var(--bg-dark);
-            scroll-behavior: smooth;
+            background-image: radial-gradient(circle at 50% 0%, #1e1b4b 0%, var(--bg-dark) 60%);
         }
 
         .container {
@@ -38,13 +44,13 @@
 
         /* --- Navigation --- */
         nav {
-            background: rgba(15, 23, 42, 0.8);
+            background: rgba(15, 23, 42, 0.85);
             backdrop-filter: blur(12px);
             padding: 1.2rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         nav .container {
@@ -56,8 +62,7 @@
         .logo {
             font-family: 'Roboto Mono', monospace;
             font-weight: 700;
-            font-size: 1.2rem;
-            letter-spacing: -1px;
+            font-size: 1.3rem;
             background: linear-gradient(to right, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -75,7 +80,7 @@
             color: var(--text-dim);
             font-size: 0.9rem;
             font-weight: 500;
-            transition: 0.3s;
+            transition: color 0.3s;
         }
 
         nav a:hover {
@@ -91,13 +96,13 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 0.9rem;
-            transition: 0.3s all ease;
-            border: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.25);
         }
 
         .btn-primary:hover {
             background: #4f46e5;
-            box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+            box-shadow: 0 0 20px var(--accent-glow);
             transform: translateY(-2px);
         }
 
@@ -105,55 +110,69 @@
         .hero {
             padding: 8rem 0 6rem;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .profile-photo {
-            width: 160px;
-            height: 160px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid var(--primary);
-            padding: 5px;
+            border: 4px solid var(--bg-card);
+            box-shadow: 0 0 0 4px var(--primary), 0 0 40px var(--accent-glow);
             margin-bottom: 2rem;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
         }
 
         .hero h1 {
             font-size: 3.5rem;
             font-weight: 800;
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
         }
 
         .hero p {
             font-family: 'Roboto Mono', monospace;
-            color: var(--primary);
+            color: var(--secondary);
             font-size: 1.1rem;
             margin-bottom: 2.5rem;
+            height: 1.5em; /* Fix height for typewriter */
         }
 
-        /* --- Project Cards --- */
+        /* --- Sections General --- */
+        section {
+            padding: 5rem 0;
+        }
+
         .section-title {
             font-size: 2rem;
             margin-bottom: 3rem;
-            position: relative;
-            display: inline-block;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
 
         .section-title::after {
             content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 40px;
-            height: 4px;
-            background: var(--primary);
+            height: 1px;
+            flex-grow: 1;
+            background: rgba(255,255,255,0.1);
         }
 
+        /* --- Projects Grid --- */
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 2.5rem;
-            margin-bottom: 4rem;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2rem;
         }
 
         .project-card {
@@ -161,24 +180,22 @@
             border-radius: 16px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: 0.4s;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
         .project-card:hover {
             transform: translateY(-8px);
             border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
 
         .project-media {
             width: 100%;
-            height: 200px;
+            height: 220px;
             object-fit: cover;
-            filter: grayscale(20%);
-            transition: 0.4s;
-        }
-
-        .project-card:hover .project-media {
-            filter: grayscale(0%);
+            background: #000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
         .project-content {
@@ -186,14 +203,16 @@
         }
 
         .project-content h3 {
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
             font-size: 1.25rem;
+            color: #fff;
         }
 
         .project-content p {
             color: var(--text-dim);
             font-size: 0.95rem;
             margin-bottom: 1.5rem;
+            line-height: 1.5;
         }
 
         .project-link {
@@ -201,56 +220,308 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.2s;
         }
 
-        /* --- Skills (Tag Cloud Style) --- */
+        .project-link:hover {
+            gap: 0.8rem;
+            color: var(--secondary);
+        }
+
+        /* --- Education & Skills Cards --- */
+        .card-container {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.05);
+            margin-bottom: 1.5rem;
+        }
+
+        .education-item h3 {
+            color: var(--primary);
+            font-family: 'Roboto Mono', monospace;
+            margin-bottom: 0.25rem;
+        }
+        
+        .education-item p {
+            color: var(--text-dim);
+        }
+
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
         }
 
-        .skill-category {
-            background: var(--bg-card);
-            padding: 1.5rem;
-            border-radius: 12px;
-        }
-
         .skill-category h3 {
+            color: var(--secondary);
             font-size: 1rem;
-            color: var(--primary);
             margin-bottom: 1rem;
             font-family: 'Roboto Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .skill-category p {
-            font-size: 0.9rem;
             color: var(--text-dim);
-            line-height: 2;
+            font-size: 0.95rem;
+            line-height: 1.8;
         }
 
         /* --- Contact --- */
-        .contact {
-            padding: 6rem 0;
+        .contact-box {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+            padding: 4rem 2rem;
+            border-radius: 20px;
             text-align: center;
-            background: rgba(99, 102, 241, 0.05);
-            border-radius: 24px;
-            margin-bottom: 4rem;
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 0.8rem 1.5rem;
+            background: var(--bg-dark);
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: 0.3s;
+        }
+
+        .contact-link:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* --- Footer --- */
         footer {
             padding: 3rem 0;
             text-align: center;
             color: var(--text-dim);
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             border-top: 1px solid rgba(255,255,255,0.05);
+            margin-top: 4rem;
         }
 
+        /* --- Mobile Responsive --- */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            nav ul { display: none; } /* Hide menu on mobile for simplicity */
+            .hero h1 { font-size: 2.2rem; }
+            nav ul { gap: 1rem; display: none; } /* Simplified for mobile */
+            .project-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
+<body>
+
+    <nav>
+        <div class="container">
+            <div class="logo">Pratham.robotics</div>
+            <ul>
+                <li><a href="#projects">Work</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="Pratham_CV (4).pdf" class="btn-primary" download>Resume</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <img src="Profile_pic_work.jpeg" alt="Pratham Salvi" class="profile-photo">
+            <h1>Pratham Salvi</h1>
+            <p id="typewriter">Robotics Engineer</p> 
+            <div style="margin-top: 1rem;">
+                <a href="#projects" class="btn-primary">View Projects</a>
+                <a href="#contact" style="color: var(--text-dim); margin-left: 1.5rem; text-decoration: none; font-size: 0.9rem;">Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Selected Projects</h2>
+            <div class="project-grid">
+                
+                <div class="project-card">
+                    <video class="project-media" controls muted loop poster="placeholder.jpg">
+                        <source src="Lidar+Cam.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="project-content">
+                        <h3>Autonomous Vehicle Control</h3>
+                        <p>Advanced autonomous driving system utilizing LiDAR and camera sensor fusion for real-time navigation and obstacle avoidance in complex environments.</p>
+                        <a href="https://github.com/prathamsalvi03/Autonomous-Vehicle-Control" class="project-link">View Code &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-media" style="background: linear-gradient(45deg, #1e293b, #334155); display: flex; align-items: center; justify-content: center;">
+                        <span style="color: #64748b; font-family: 'Roboto Mono'">[Control Systems Viz]</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Advanced Control Systems</h3>
+                        <p>Implementation of various control techniques ranging from PID basics to advanced state-space implementations in Python.</p>
+                        <a href="https://github.com/prathamsalvi03/Controls" class="project-link">View Code &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="brain_Mri.jpeg" alt="UR5 Interceptor" class="project-media">
+                    <div class="project-content">
+                        <h3>UR5 Interceptor (MPC + LQR)</h3>
+                        <p>Real-time target interception using a UR5 robotic arm. Implemented Model Predictive Control and LQR for precise trajectory planning.</p>
+                        <a href="https://github.com/prathamsalvi03/UR5-Interceptor-Predictive-Robotics-with-MPC-LQR" class="project-link">View Code &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <video class="project-media" controls muted loop>
+                        <source src="PANDA_VISION_PROJECT_MOVEIT2.webm" type="video/webm">
+                    </video>
+                    <div class="project-content">
+                        <h3>Panda Robot Vision Control</h3>
+                        <p>Integrated Computer Vision with MoveIt2 for the Franka Emika Panda arm to detect and manipulate objects autonomously.</p>
+                        <a href="https://github.com/prathamsalvi03/Panda-robot-vision-based-control-using-moveit2" class="project-link">View Code &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="brain_Mri.jpeg" alt="AI Research" class="project-media">
+                    <div class="project-content">
+                        <h3>ML & Deep Learning Research</h3>
+                        <p>A collection of research implementations focusing on Reinforcement Learning agents and Deep Learning architectures.</p>
+                        <a href="https://github.com/prathamsalvi03/ML-RL-DL" class="project-link">View Code &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <video class="project-media" controls muted loop>
+                        <source src="Terrapredict.mp4" type="video/mp4">
+                    </video>
+                    <div class="project-content">
+                        <h3>TerraPredict</h3>
+                        <p>AI-powered environmental analysis system designed to predict landslides using geographical data and machine learning.</p>
+                        <a href="https://github.com/prathamsalvi03/TerraPredict" class="project-link">View Code &rarr;</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="card-container">
+                <div class="education-item" style="margin-bottom: 2rem;">
+                    <h3>M.Eng in Robotics</h3>
+                    <p style="color: var(--text-main); font-weight: 500;">University of Maryland, College Park</p>
+                    <p style="font-size: 0.9rem;">2025 – 2027</p>
+                </div>
+                <div style="width: 100%; height: 1px; background: rgba(255,255,255,0.1); margin-bottom: 2rem;"></div>
+                <div class="education-item">
+                    <h3>B.Tech in Mechanical Engineering</h3>
+                    <p style="color: var(--text-main); font-weight: 500;">VIT Vellore</p>
+                    <p style="font-size: 0.9rem;">2020 – 2024 | CGPA: 8.17/10</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="card-container">
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Robotics</h3>
+                        <p>Motion Planning • Control Systems (PID, MPC, LQR) • SLAM • Dynamics • State Estimation • ROS1/ROS2</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>AI & ML</h3>
+                        <p>Reinforcement Learning • Computer Vision • Deep Learning • Imitation Learning • PyTorch • TensorFlow</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Development</h3>
+                        <p>Python • C++ • MATLAB • Linux • Git • Docker • CI/CD</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Simulation</h3>
+                        <p>Isaac Gym/Sim • Gazebo • MuJoCo • PyBullet • CARLA • SolidWorks</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="contact-box">
+                <h2 style="margin-bottom: 1rem;">Let's Build Something Amazing</h2>
+                <p style="color: var(--text-dim);">I am currently looking for internship opportunities in Robotics and AI.</p>
+                <div class="contact-links">
+                    <a href="mailto:prathamsalvi1221@gmail.com" class="contact-link">
+                        📧 prathamsalvi1221@gmail.com
+                    </a>
+                    <a href="https://github.com/prathamsalvi03" class="contact-link" target="_blank">
+                        💻 GitHub Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Pratham Salvi. Built with Code.</p>
+        </div>
+    </footer>
+
+    <script>
+        const textElement = document.getElementById('typewriter');
+        const roles = ["Robotics Engineer", "AI/ML Researcher", "Autonomous Systems Developer"];
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function type() {
+            const currentRole = roles[roleIndex];
+            
+            if (isDeleting) {
+                textElement.textContent = currentRole.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                textElement.textContent = currentRole.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && charIndex === currentRole.length) {
+                isDeleting = true;
+                typeSpeed = 2000; // Pause at end
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                typeSpeed = 500; // Pause before next word
+            }
+
+            setTimeout(type, typeSpeed);
+        }
+
+        document.addEventListener('DOMContentLoaded', type);
+    </script>
+</body>
+</html>
